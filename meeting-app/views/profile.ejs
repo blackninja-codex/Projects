@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+  
+  <h1>Welcome to the Scheduling App</h1>
+
+  <div class="Appointments">
+
+        <h2>Upcoming Appointments</h2>
+
+        <% if(appointment.length > 0) { %>
+          <ul>
+            <% for(var i = 0; i < appointments.length; i++) { %>
+              <li><%= appointment[i].title %> - <%= appointment[i].time %></li>
+            <% } %>
+          </ul>
+        <% } else { %>
+          <p>No upcoming appointments.</p>
+        <% } %>
+
+  </div>
+
+  <div class="buttons">
+
+    <a class="updateProfile" href="/update" role="button">
+    <a class="setAppointment" href="/appointment" role="button">
+    <a class="markOffHours" href="/offHours" role="button">
+
+  </div>
+
+<%- include('partials/footer') %>

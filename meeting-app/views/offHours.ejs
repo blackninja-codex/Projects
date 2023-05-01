@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<div class="Off-hours">      
+        <h2>Mark Off-Hours</h2>
+        <form action="/off-hours" method="post">
+          <label for="start">Start Time:</label>
+          <input type="datetime-local" name="start" id="start" required>
+          <label for="end">End Time:</label>
+          <input type="datetime-local" name="end" id="end" required>
+          <input type="submit" value="Mark Off-Hours">
+        </form>
+</div>
+<%- include('partials/footer') %>
