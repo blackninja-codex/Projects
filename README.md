@@ -1,4 +1,4 @@
-# Meeting Scheduling web app
+
 Mern Stack app
 Used Mongoose for Database
 Used passport-local mongoose for authentication
