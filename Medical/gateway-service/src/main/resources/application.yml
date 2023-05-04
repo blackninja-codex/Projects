@@ -1,0 +1,34 @@
+server:
+  port: 3081
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+      - id: doctor
+        uri: http://localhost:3001/
+        predicates:
+        - Path=/Doctors/**
+      - id: patient
+        uri: http://localhost:3002/
+        predicates:
+        - Path=/Patients/**
+
+      - id: room
+        uri: http://localhost:3003/
+        predicates:
+          - Path=/Rooms/**
+      - id : record
+        uri: http://localhost:3004/
+        predicates:
+          - Path=/Records/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:3000/eureka
+  registerWithEureka:
+       - true
+  fetchRegistry:
+       - true
